@@ -6,6 +6,8 @@
 //  Copyright © 2024 Riley Testut. All rights reserved.
 //
 
+#if MARKETPLACE
+
 import UIKit
 import MarketplaceKit
 
@@ -372,3 +374,5 @@ extension InstallMarketplaceAppViewController
         return false
     }
 }
+
+#endif

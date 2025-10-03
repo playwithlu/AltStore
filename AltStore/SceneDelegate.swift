@@ -91,6 +91,11 @@ private extension SceneDelegate
 {
     func open(_ context: UIOpenURLContext)
     {
+        if AltStoreMCPURLHandler.shared.handle(context.url)
+        {
+            return
+        }
+        
         if context.url.isFileURL
         {
             guard context.url.pathExtension.lowercased() == "ipa" else { return }
@@ -171,12 +176,14 @@ private extension SceneDelegate
                     NotificationCenter.default.post(name: AppDelegate.viewAppDeepLinkNotification, object: nil, userInfo: [AppDelegate.viewAppDeepLinkStoreAppKey: storeApp])
                 }
                 
+#if MARKETPLACE
             case "pal-promo":
                 let queryItems = components.queryItems?.reduce(into: [String: String]()) { $0[$1.name.lowercased()] = $1.value } ?? [:]
                 guard let session = queryItems["session"], let emailAddress = queryItems["email"] else { return }
                 
                 self.redeemPALPromo(session: session, emailAddress: emailAddress)
                 
+#endif
             default: break
             }
         }
@@ -190,6 +197,7 @@ private extension SceneDelegate
         UIApplication.shared.open(faqURL)
     }
 
+#if MARKETPLACE
     func redeemPALPromo(session: String, emailAddress: String)
     {
         Task<Void, Never> {
@@ -231,6 +239,7 @@ private extension SceneDelegate
             }
         }
     }
+#endif
 }
 
 extension SceneDelegate: MarketplaceSceneDelegate

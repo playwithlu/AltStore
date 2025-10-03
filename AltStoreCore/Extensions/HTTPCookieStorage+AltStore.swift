@@ -10,7 +10,17 @@ import Roxas
 
 public extension HTTPCookieStorage
 {
-    static let altstore = HTTPCookieStorage.sharedCookieStorage(forGroupContainerIdentifier: Bundle.main.altstoreAppGroup!) // Should never crash for valid AltStore PAL + Classic builds.
+    static let altstore: HTTPCookieStorage = {
+        guard let appGroup = Bundle.main.altstoreAppGroup
+        else
+        {
+            Logger.main.error("Missing app group container; falling back to shared HTTPCookieStorage.")
+            return HTTPCookieStorage.shared
+        }
+        
+        let storage = HTTPCookieStorage.sharedCookieStorage(forGroupContainerIdentifier: appGroup)
+        return storage
+    }()
     
     class func migrateLocalPatreonCookiesIfNeeded()
     {

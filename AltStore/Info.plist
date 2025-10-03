@@ -4,7 +4,7 @@
 <dict>
 	<key>ALTAppGroups</key>
 	<array>
-		<string>group.io.altstore.AltStore</string>
+		<string>group.io.Lu.mAltStore</string>
 	</array>
 	<key>ALTDeviceID</key>
 	<string>00008120-001270DA119B401E</string>
@@ -14,6 +14,8 @@
 	<string>2.2</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>$(ALT_DISPLAY_NAME)</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -41,6 +43,110 @@
 			<array>
 				<string>GradientTop</string>
 				<string>GradientBottom</string>
+			</array>
+		</dict>
+	</dict>
+	<key>CFBundleIcons~ipad</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>Beach</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Beach</string>
+			</dict>
+			<key>Clip</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Clip</string>
+			</dict>
+			<key>Cotton Candy</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Cotton Candy</string>
+			</dict>
+			<key>DayOne</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>DayOne</string>
+			</dict>
+			<key>Delta</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Delta</string>
+			</dict>
+			<key>EU</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>EU</string>
+			</dict>
+			<key>Evil</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Evil</string>
+			</dict>
+			<key>Flag</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Flag</string>
+			</dict>
+			<key>Inverted</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Inverted</string>
+			</dict>
+			<key>Inverted Prototype</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Inverted Prototype</string>
+			</dict>
+			<key>Lava</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Lava</string>
+			</dict>
+			<key>Ocean</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Ocean</string>
+			</dict>
+			<key>Original</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Original</string>
+			</dict>
+			<key>Prototype</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Prototype</string>
+			</dict>
+			<key>Sky</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Sky</string>
+			</dict>
+			<key>Sun</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Sun</string>
+			</dict>
+			<key>Sunset</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Sunset</string>
+			</dict>
+			<key>Watermelon</key>
+			<dict>
+				<key>CFBundleIconName</key>
+				<string>Watermelon</string>
+			</dict>
+		</dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>AppIcon60x60</string>
+				<string>AppIcon76x76</string>
 			</array>
 		</dict>
 	</dict>
@@ -84,6 +190,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>altstore-com.rileytestut.AltStore</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>AltStore MCP</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>altstore-mcp</string>
 			</array>
 		</dict>
 	</array>
@@ -182,24 +298,24 @@
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>io.altstore.DeleteWarningAction</string>
 			<key>UIApplicationShortcutItemIconSymbolName</key>
 			<string></string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Before Deleting…</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>Once deleted, you won’t be able to update apps.</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Before Deleting…</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>io.altstore.DeleteWarningAction</string>
 		</dict>
 		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>io.altstore.FAQAction</string>
 			<key>UIApplicationShortcutItemIconSymbolName</key>
 			<string>questionmark.circle</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Need Help?</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>Check out our FAQ.</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Need Help?</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>io.altstore.FAQAction</string>
 		</dict>
 	</array>
 	<key>UIBackgroundModes</key>
@@ -258,109 +374,5 @@
 			</dict>
 		</dict>
 	</array>
-	<key>CFBundleIcons~ipad</key>
-	<dict>
-		<key>CFBundleAlternateIcons</key>
-		<dict>
-			<key>DayOne</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>DayOne</string>
-			</dict>
-			<key>Delta</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Delta</string>
-			</dict>
-			<key>Evil</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Evil</string>
-			</dict>
-			<key>Inverted Prototype</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Inverted Prototype</string>
-			</dict>
-			<key>Clip</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Clip</string>
-			</dict>
-			<key>Lava</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Lava</string>
-			</dict>
-			<key>Original</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Original</string>
-			</dict>
-			<key>Cotton Candy</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Cotton Candy</string>
-			</dict>
-			<key>Inverted</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Inverted</string>
-			</dict>
-			<key>Beach</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Beach</string>
-			</dict>
-			<key>EU</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>EU</string>
-			</dict>
-			<key>Sunset</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Sunset</string>
-			</dict>
-			<key>Sky</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Sky</string>
-			</dict>
-			<key>Ocean</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Ocean</string>
-			</dict>
-			<key>Watermelon</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Watermelon</string>
-			</dict>
-			<key>Prototype</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Prototype</string>
-			</dict>
-			<key>Flag</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Flag</string>
-			</dict>
-			<key>Sun</key>
-			<dict>
-				<key>CFBundleIconName</key>
-				<string>Sun</string>
-			</dict>
-		</dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>AppIcon60x60</string>
-				<string>AppIcon76x76</string>
-			</array>
-		</dict>
-	</dict>
 </dict>
 </plist>

@@ -6,11 +6,11 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.io.altstore.AltStore</string>
+		<string>group.io.Lu.mAltStore</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)io.altstore.AltStore</string>
+		<string>$(AppIdentifierPrefix)io.Lu.mAltStore</string>
 	</array>
 </dict>
 </plist>

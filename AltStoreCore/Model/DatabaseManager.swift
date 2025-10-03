@@ -449,8 +449,11 @@ private extension DatabaseManager
     
     func migrateDatabaseToAppGroupIfNeeded(completion: @escaping (Result<Void, Error>) -> Void)
     {
-        // Only migrate if we haven't migrated yet and there's a valid AltStore app group.
-        guard UserDefaults.shared.requiresAppGroupMigration && Bundle.main.altstoreAppGroup != nil else { return completion(.success(())) }
+        // Only migrate if we haven't migrated yet and there's a valid AltStore app group path we can access.
+        guard UserDefaults.shared.requiresAppGroupMigration,
+              let appGroup = Bundle.main.altstoreAppGroup,
+              let appGroupURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup)
+        else { return completion(.success(())) }
 
         func finish(_ result: Result<Void, Error>)
         {
@@ -464,10 +467,10 @@ private extension DatabaseManager
         }
         
         let previousDatabaseURL = PersistentContainer.legacyDirectoryURL().appendingPathComponent("AltStore.sqlite")
-        let databaseURL = PersistentContainer.defaultDirectoryURL().appendingPathComponent("AltStore.sqlite")
-        
+        let databaseURL = appGroupURL.appendingPathComponent("Library/Application Support/AltStore.sqlite")
+
         let previousAppsDirectoryURL = InstalledApp.legacyAppsDirectoryURL
-        let appsDirectoryURL = InstalledApp.appsDirectoryURL
+        let appsDirectoryURL = appGroupURL.appendingPathComponent("Library/Application Support/Apps")
         
         let databaseIntent = NSFileAccessIntent.writingIntent(with: databaseURL, options: [.forReplacing])
         let appsIntent = NSFileAccessIntent.writingIntent(with: appsDirectoryURL, options: [.forReplacing])

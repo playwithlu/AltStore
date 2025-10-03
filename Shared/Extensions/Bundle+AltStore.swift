@@ -55,9 +55,9 @@ public extension Bundle
 public extension Bundle
 {
     #if MARKETPLACE
-    static var baseAltStoreAppGroupID = "group.io.altstore.AltStore"
+    static var baseAltStoreAppGroupID = "group.io.Lu.AltStore"
     #else
-    static var baseAltStoreAppGroupID = "group.com.rileytestut.AltStore"
+    static var baseAltStoreAppGroupID = "group.io.Lu.mAltStore"
     #endif
     
     var appGroups: [String] {
@@ -65,8 +65,12 @@ public extension Bundle
     }
     
     var altstoreAppGroup: String? {        
-        let appGroup = self.appGroups.first { $0.contains(Bundle.baseAltStoreAppGroupID) }
-        return appGroup
+        if let appGroup = self.appGroups.first(where: { $0.contains(Bundle.baseAltStoreAppGroupID) })
+        {
+            return appGroup
+        }
+        
+        return self.appGroups.first
     }
     
     var completeInfoDictionary: [String : Any]? {

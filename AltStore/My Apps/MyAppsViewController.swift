@@ -1596,7 +1596,9 @@ private extension MyAppsViewController
                         }
                         
                         // Also update installed apps as fallback.
+                        #if MARKETPLACE
                         await AppMarketplace.shared.update()
+                        #endif
                     }
                     catch let error as AppManager.FetchSourcesError
                     {

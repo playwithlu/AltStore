@@ -60,9 +60,9 @@ public class Keychain
     public static let shared = Keychain()
     
     #if MARKETPLACE
-    fileprivate let keychain = KeychainAccess.Keychain(service: "io.altstore.AltStore").accessibility(.afterFirstUnlock).synchronizable(true)
+    fileprivate let keychain = KeychainAccess.Keychain(service: "io.Lu.mAltStore").accessibility(.afterFirstUnlock).synchronizable(true)
     #else
-    fileprivate let keychain = KeychainAccess.Keychain(service: "com.rileytestut.AltStore").accessibility(.afterFirstUnlock).synchronizable(true)
+    fileprivate let keychain = KeychainAccess.Keychain(service: "io.Lu.mAltStore").accessibility(.afterFirstUnlock).synchronizable(true)
     #endif
     
     @KeychainItem(key: "appleIDEmailAddress")

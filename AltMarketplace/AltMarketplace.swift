@@ -57,7 +57,7 @@ final class AltMarketplace: MarketplaceExtension
                 let context = DatabaseManager.shared.persistentContainer.newBackgroundContext()
                 let values = context.performAndWait { () -> AppVersionValues? in
                     //TODO: Somehow determine which source to use if there are multiple.
-                    let predicate = NSPredicate(format: "%K == %@", #keyPath(AltStoreCore.AppVersion.normalizedDownloadURL), normalizedDownloadURL)
+                    let predicate = NSPredicate(format: "normalizedDownloadURL == %@", normalizedDownloadURL)
                     guard let appVersion = AltStoreCore.AppVersion.first(satisfying: predicate, in: context) else { return nil }
                     return AppVersionValues(appVersion)
                 }
@@ -83,8 +83,8 @@ final class AltMarketplace: MarketplaceExtension
                     let context = DatabaseManager.shared.persistentContainer.newBackgroundContext()
                     let values = context.performAndWait { () -> AppVersionValues? in
                         //TODO: Somehow determine which source to use if there are multiple.
-                        let predicate = NSPredicate(format: "%K == %@", #keyPath(StoreApp._marketplaceID), marketplaceID.description)
-                        guard let storeApp = StoreApp.first(satisfying: predicate, in: context) else { return nil }
+                        let predicate = NSPredicate(format: "_marketplaceID == %@", marketplaceID.description)
+                        guard let storeApp = AltStoreCore.StoreApp.first(satisfying: predicate, in: context) else { return nil }
                         
                         let installedAppVersion = storeApp.installedApp?.version ?? storeApp.latestSupportedVersion?.version
                         

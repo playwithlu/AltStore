@@ -6,6 +6,8 @@
 //  Copyright © 2024 Riley Testut. All rights reserved.
 //
 
+#if MARKETPLACE
+
 import MarketplaceKit
 import CoreData
 import Security
@@ -1087,3 +1089,5 @@ extension AppMarketplace: URLSessionDelegate
         return (.useCredential, URLCredential(trust: trust))
     }
 }
+
+#endif
